@@ -14,3 +14,15 @@ Scaling and Normalization: A significant focus is placed on the importance of sc
 
 These takeaways are foundational for anyone looking to work in data science or machine learning, including transitioning into a Machine Learning Engineer role. Understanding and applying these steps can significantly impact the quality of your data analysis and modeling projects.
 
+
+
+How does effective data preparation impact the success of a data science project?
+-It ensures data quality for accurate analysis.
+
+
+Why is it crucial to remove duplicate records from a dataset before performing demographic analysis?
+-to ensure that each entry is unique and accurately represented
+
+
+What is the purpose of grouping data in data analysis?
+-to compare subsets and subgroup differences
