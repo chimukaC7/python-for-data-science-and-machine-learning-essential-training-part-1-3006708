@@ -17,3 +17,24 @@ For someone in your field looking to pivot into a Machine Learning Engineer role
 Remember, the choice between Matplotlib and Seaborn often comes down to the specific needs of your project and your personal preference for customization versus convenience.
 
 
+
+
+Why is understanding time series visualization crucial for the role of a data analyst?
+-It enables reliable demand forecasting.
+
+Why are statistical plots crucial in data analysis?
+-to detect outliers and understand variable relations
+
+Irane wants to create sophisticated visualizations with minimal effort. Which library should she use?
+-Seaborn, for its simplicity and elegant default themes
+
+
+Noah is an e-commerce analyst who wants to convey site usability insights using various charts. Which chart type should he use to visualize the total number of items purchased per day?
+-a line chart
+
+
+What is the purpose of setting axes limits and tick marks in a plot?
+-to make it easier for viewers to interpret the plot
+
+How does adding labels and annotations enhance plot comprehension?
+-It adds context and meaning.
