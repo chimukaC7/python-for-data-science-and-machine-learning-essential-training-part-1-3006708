@@ -13,3 +13,25 @@ Creating and Manipulating Arrays and Matrices: You'll learn how to create arrays
 
 
 These takeaways are foundational for your aspirations in machine learning, enhancing your ability to manipulate and analyze data effectively.
+
+
+Ember needs to perform arithmetic operations on a large dataset in Python. Which library makes it efficient for her?
+-NumPy
+
+
+Jiana is analyzing patient health data and needs to detect anomalies to alert doctors. Which method helps generate summary statistics efficiently for her?
+-pandas.sum
+
+
+How does categorical data summarization contribute to data analysis in sentiment analysis?
+-by calculating the sum of unique values in an array
+
+What does the Pearson correlation coefficient measure?
+-the correlation between linearly related continuous numeric variables
+
+In a study, Tertius is examining the relationship between income brackets and smoking habits. Which statistical method is most suitable for analyzing this data?
+-Spearman's rank correlation
+
+
+What is the purpose of multivariate analysis for outliers?
+-to identify outliers that occur in observations from two or more variables
