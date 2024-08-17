@@ -1,0 +1,80 @@
+Data parsing
+Selecting transcript lines in this section will navigate to timestamp in the video
+- [Instructor] Let's look at working with parsed data in beautiful soup. I've broken the demonstration to come into three sections, parsing data, getting data from a parse tree and searching and retrieving data from a parse tree. Parsing data is where you'll pass an HTML or XML document to a Beautiful Soup constructor. The constructor converts the document to Unicode and then parses it with a built-in HTML parser. Well, HTML parser, by default that is. Looking closer at searching and retrieving data. I'm going to show you the find all method. And this method searches a tag in its descendants to retrieve tags or strings that match your filters. There are several methods for searching and filtering a parse tree. The ones that I'm going to show you now are the name argument, keyword argument, string argument, lists, Boolean values, strings, and regular expressions. You can pass any of these arguments into the find all method to use as filters and return either strings or tags. I'll show you in our demo. Data parsing is super simple with Beautiful Soup. You just pass in an HTML or XML document to the Beautiful Soup constructor. The constructor converts the document to Unicode and then parses it with a built-in HTML parser. So the first thing we need to do is just to import our libraries. And so your Jupyter notebook is coming preloaded with Beautiful Soup and the urllib as well as the regular expression library here. So all you need to do is just run this code block and you have your libraries available. So let's start by reading in some data. We're going to use the URL Lib library to do that. So we're going to say with URL lib.request.URLopen, and within this function, we're going to pass in a string of a web address that has our HTML. So that's https://Raw GitHub user content.com/bigdatagal/ data-mania-demos/master/IOT2018.html. And then close the string. So again, that's https://raw GitHubusercontent.com/ bigdatagal/data-mania-demos/master/IOT- 2018html. And we want this to be read as response and we want HTML to be set equal to the response read function. So we'll say HTML equals response.read. I need to HTML, check the syntax really quick. So we need to have a colon here and then I'm just going to bring this back up and press enter so it's structured properly. And then, okay, run this. So now what we've done is we've loaded data into our Jupyter Notebook. So let's create a soup object, we'll call it soup, and we'll say soup is equal to beautiful soup constructor. And we'll pass in our HTML and then we'll pass a perimeter that says it should be read with the HTML parser. So create a string that reads HTML.parser. Then let's just print the type out here. So we'll say type and pass in our soup object and run this. Okay, looks like I have a stray bracket here. So clean that up, run it again. And here we go. As you can see, we have created a Beautiful Soup object. Now let's move into data parsing. First thing's first, let's go ahead and just prettify it so we can kind of get an idea of what's in there and not have a bunch of HTML that's totally unformatted. So let's call the print function. And we'll pass in soup.prettify and then let's just go ahead and print out only the first 100 characters. So we'll say zero:100 and run this. And this is just a little preview of what we've got inside of our soup object. Let's practice getting data from a parse tree. Let's start by getting the text out of our HTML and isolating the text from within that HTML code. To do that, let's just create an object called text_only and we'll call the get text method off of our soup object. So we'll say soup.get_text. And then print it out. Print our text only. Okay, and then let me just check the syntax really quick. We've got a stray dot there, so let's just get rid of that and then run this. And here's our output. That's nice and pretty easy to read. Now I'm going to show you how to use this data and basically search and retrieve data from a parse tree. I've left some basic information for you within the notebook about searching and retrieving data from a parse tree. And we're going to be using the find all method. The find all method searches a tag in its descendants to retrieve tags or strings that match your filters. Basically, you can just pass any of these arguments into the find all method to use as filters and then return either strings or tags. So the first thing I want to show you is how to retrieve tags by filtering the name arguments and name argument search for tags by filtering based on the name tag. So let's practice really quickly. We'll just say soup and we'll call the find all method off of that. And then we want to pass in the tech LI. And run this. Here's our output. What this has done is it's gone through our parse tree and it's basically filtered out all of the tags that have the name LI and printed only those. So you see we have a bunch of LI tags here. You can also retrieve tags by filtering with the keyword argument. So let's try that out real quick. This basically is going to search the parse tree for tags by filtering based on tag attribute. So what we need to do is call the find all method off of our soup object, and we'll go ahead and create a keyword filter. We'll call that ID equal to link seven. So we're basically saying we want all of the tags that have the identification link seven as a keyword. So when we run this, what we're actually getting is only one tag, which happens to be the one associated with the ID link seven. It's a link to online courses for IOT. You can also retrieve tags by filtering with string arguments. So this is where you search for tags by filtering based on exact stream. So again, let's call the find all method off of our soup object. And then this time, let's pass a string that reads OL and run this. And so here what it's done is it's passed through our parse tree and it's basically filtered out all of the code that fell within the OL tags. So you can see here there's an opening tag here and a closing tag here. So it's just passed through the entire document and retrieved the tags within the OL tags. Now let's retrieve tags by filtering with lists objects. Again, we will call the find all method off of our soup object. And this time we'll pass in a list of tags. The first one will be the OL tag. And then let's make the next one a B tag and run this. Okay. You can see now that we have filtered out from our parse tree only the text from within the tags that fall within the B tag and the OL tag. You can retrieve tags by filtering with regular expressions, and what this function does is it searches for tags and strings simply by filtering based on regular expression. So let's go ahead and let's create a variable called T and we'll say T is equal to re, regular expression.compile, And we'll pass in a string called T. And then let's create a for loop. We'll say for tag in, and then we'll call the find all method off of the soup object. So we'll say soup.find all, and we'll pass in again T. For each of these tags, we want to print the tag name. So we'll call the print function and pass in tag name. Tag.name, run this. And so now we have retrieve tags by filtering with regular expression here, which was T. You can also retrieve tags by filtering with a Boolean value. So let's just practice that real quick. I'm going to copy this code that we just wrote here so we can reuse it. And then in this case, what we want to do is we want to filter based on the Boolean value true here. So we're going to change that T to true. And then just run this again. And here's our output. That's basically how you filter with Boolean values. You can retrieve web links by filtering with string objects. Let me show you how to do that real quick. So for this, let's just create a new for loop and we'll say for link in and all the find all method, off of the soup object. And then we'll pass in an A, a string that reads A. Basically what we're doing here is we are retrieving all of the links that are associated with an A tag. For each of those, we want to print them out. So we'll call the print function and then we'll say link.get, and then let's just ask it to get the Href, and run this. Okay, here we have a list of links. So basically what this has done is it's gone through our entire soup object and isolated only the links and printed them out in a list. You can also retrieve strings by filtering with regular expression. So let me show you how to do that really quick. Again, we're going to use the find all methods. So we'll say soup.find all, and this time we wanted to find where string is equal to. And then we want to call the compile function from regular expression. So that's re.compile, and then we'll pass in a string that reads data and run this. Okay, so that's a bit long as you can see here, but what it's actually done is it's filtered our parse three by the regular expression data. Now that you've made it this far, you've basically covered all of the mechanics of scraping web data with Beautiful Soup. So next I'm going to show you how to use this stuff in action.
+
+
+
+Sure, let's break down the key concepts from the "Data parsing" video:
+
+1. Parsing Data with Beautiful Soup
+Beautiful Soup Constructor: You start by passing an HTML or XML document to the Beautiful Soup constructor. This converts the document to Unicode and parses it using a built-in HTML parser.
+Example:
+python
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(html_doc, 'html.parser')
+
+2. Searching and Retrieving Data
+find_all Method: This method searches a tag and its descendants to retrieve tags or strings that match your filters. You can use various arguments like name, keyword, string, lists, Boolean values, and regular expressions to filter the data.
+Example:
+python
+tags = soup.find_all('li') # Finds all
+tags
+
+3. Filtering Techniques
+Name Argument: Filters tags by their name.
+python
+soup.find_all('li') # Finds all
+tags
+
+Keyword Argument: Filters tags by attribute.
+python
+soup.find_all(id='link7') # Finds tag with id='link7'
+
+String Argument: Filters tags by exact string match.
+python
+soup.find_all(string='example') # Finds tags containing the string 'example'
+
+Lists: Filters tags by a list of names.
+python
+soup.find_all(['ol', 'b']) # Finds all
+and tags
+
+Regular Expressions: Filters tags using regex.
+python
+import re
+soup.find_all(re.compile('t')) # Finds tags with 't' in their name
+
+Boolean Values: Filters tags using Boolean values.
+python
+soup.find_all(True) # Finds all tags
+
+
+4. Practical Example
+Loading Data: Use urllib to load HTML data.
+python
+from urllib.request import urlopen
+html = urlopen('https://example.com').read()
+soup = BeautifulSoup(html, 'html.parser')
+
+Creating Soup Object: Convert HTML to a Beautiful Soup object.
+python
+soup = BeautifulSoup(html, 'html.parser')
+
+Prettify: Format the parsed data for readability.
+python
+print(soup.prettify())
+
+
+5. Retrieving Specific Data
+Get Text: Extracts all text from the HTML.
+python
+text = soup.get_text()
+
+Find Specific Tags: Use find_all to retrieve specific tags.
+python
+links = soup.find_all('a') # Finds all tags
+
+
+By understanding these concepts, you can effectively parse and retrieve data from web pages using Beautiful Soup. Feel free to ask if you have more questions!
+
+
